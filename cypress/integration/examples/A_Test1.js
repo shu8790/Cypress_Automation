@@ -39,6 +39,10 @@ cy.get(".products").find(".product").eq(1).contains("ADD TO CART").click();
 //  usage : When you need to locate a button or label by visible text
 
 // click on the casshew product add to cart button
+// each() method - The each() method in Cypress is 
+// used to iterate over a set of DOM elements and perform actions or assertions on each of them.
+// usage -You want to loop through a list of items and perform custom logic or conditional checks on each element in a set.
+// here $el - element, index - index, $list - list of all elements 
 cy.get("@productsLocator").find(".product").each(($el, index, $list)=> {
 
     const vegName=$el.find("h4.product-name").text();
@@ -54,6 +58,17 @@ cy.get("@productsLocator").find(".product").each(($el, index, $list)=> {
 cy.get(".brand.greenLogo").should("have.text","GREENKART"); 
 
 // get the text of logo -> then method Use
+// The .then() method in Cypress is used to access and work with the resolved value of a Cypress command.
+/* when to use then() -> 
+    Use .then() when:
+	•	You want to access a value from a Cypress command and use it later
+	•	You want to do conditional actions based on the element or value
+	•	You want to interact with raw DOM elements (like jQuery or JS objects)
+  
+   why to use then() ->
+   	•	You cannot assign values directly from Cypress commands to JS variables outside the Cypress chain.
+	•	.then() helps bridge Cypress commands with regular JavaScript logic.
+*/
 cy.get(".brand.greenLogo").then(function(logoName)
     {
             cy.log(logoName.text());
