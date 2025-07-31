@@ -12,15 +12,9 @@ describe("This is a test suit to handle Mouse hover", function()
 // you can also directly click on top by using force: true, this approach perform direct action on the hidden elements for that u dont need to use show method of jquery
       cy.contains("Top").click({force:true});
 
-
-
-
 // check the url as it should change after clicking on top
 
     cy.url().should("include","#top"); // this step is to get the url and assert it 
-
-
-
     
 })
 })
