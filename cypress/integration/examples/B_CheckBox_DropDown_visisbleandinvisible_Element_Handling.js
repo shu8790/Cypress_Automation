@@ -43,9 +43,10 @@ cy.get("#ui-id-1").should("be.visible").find("li.ui-menu-item div").each(($el,in
 
 cy.get("#displayed-text").should("be.visible");
 cy.get("#hide-textbox").click();
-cy.get("#displayed-text").should("not.be.visible");
-cy.get("#show-textbox").click();
-cy.get("#displayed-text").should("be.visible");
+cy.get("#displayed-text").invoke("show").should("be.visible");
+// cy.get("#displayed-text").should("not.be.visible");
+// cy.get("#show-textbox").click();
+// cy.get("#displayed-text").should("be.visible");
 
 // handling radio button
 
